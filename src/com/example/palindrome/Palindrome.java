@@ -14,6 +14,7 @@ public class Palindrome {
         palindrome = palinReader.nextLine(); //count # letters in the word, save that as some integer "i"
         int i = palindrome.length();
         int j = palindrome.length()-1;
+        int count = 0;
         System.out.println("This potential palindrome has "+i+" letters...");
 
         //This is a good time to start using try-catches instead of hasNextInt and NextLine.
@@ -22,9 +23,9 @@ public class Palindrome {
         //check if i is the same character as 0
         for ( ; j>=0; j--) {
 
-        System.out.println(palindrome.charAt(i-(j+1))+"-"+palindrome.charAt(j));
-
-            if (palindrome.charAt(i-j)==palindrome.charAt(j)) {
+            if (palindrome.charAt(i-(j+1))==palindrome.charAt(j)) {
+                System.out.println(palindrome.charAt(i-(j+1))+"-"+palindrome.charAt(j));
+                count++;
             } else {
                 break;
             }
@@ -32,6 +33,11 @@ public class Palindrome {
         //and so on...
         }
 
+        if(count==i) {
+            System.out.println("This word is a palindrome!");
+        } else {
+            System.out.println("But this word is not a palindrome.");
+        }
         //is the word the same as the reversed word?
     }
 }
