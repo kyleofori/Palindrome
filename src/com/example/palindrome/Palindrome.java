@@ -8,17 +8,29 @@ import java.util.Scanner;
 public class Palindrome {
     public static void main(String[] args) {
         Scanner palinReader = new Scanner(System.in);
-        String palindrome;
+        String palindrome = "";
 
         System.out.println("Enter the word that you want to check for palindrome-ness.");
+        palindrome = palinReader.nextLine(); //count # letters in the word, save that as some integer "i"
+        int i = palindrome.length();
+        int j = palindrome.length()-1;
+        System.out.println("This potential palindrome has "+i+" letters...");
 
-        if (palinReader.hasNext())
+        //This is a good time to start using try-catches instead of hasNextInt and NextLine.
 
-        //count # letters in the word, save that as some integer "i"
+
         //check if i is the same character as 0
+        for ( ; j>=0; j--) {
+
+        System.out.println(palindrome.charAt(i-(j+1))+"-"+palindrome.charAt(j));
+
+            if (palindrome.charAt(i-j)==palindrome.charAt(j)) {
+            } else {
+                break;
+            }
         //check if i-1 is the same character as 1
         //and so on...
-        //for (int i = (number of letters) ; i>=0; i--)
+        }
 
         //is the word the same as the reversed word?
     }
